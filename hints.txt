@@ -1,0 +1,27 @@
+Hints!
+
+Gameplay hints for both verisons:
+* Use your potions! 50 health is not enough to make it through every combat encounter.
+
+* If you need more hints for the puzzles than what is included in the game (hints are given out when you repeatedly fail a puzzle), look at the solutions in the walkthrough file.
+
+* Stay observant! If the map is not displayed in a room, there is still more to find there.
+
+* Some backtracking is required! Look for rooms that mention locks, and use your map to spot hidden rooms.
+
+* SUPER. HOT. Time only moves when you move (or fail to solve a puzzle).
+
+
+
+Pyhton version exclusive hints:
+*The targets of your attacks need their names typed exactly as they are spelled. Capitalization doesn't matter, but you *do* need to spell correctly.
+
+* Items need to be equipped! You won't always be able to use every item (paws make it hard to use a some things), but whenever you get something new, use it.
+
+* Use the shortcuts! N, S, E, W, and I are very useful.
+
+* Use the help menu! While there *are* some commands that aren't included there, everything that's mandatory to progress is mentioned in it.
+
+* Bored of combat/puzzles? Check the walkthrough for cheats.
+
+* Want a moderately obscure reference to a Scottish comedy program? Try using "whence I came" as the direction you want to go. https://www.youtube.com/watch?v=sdQ11fTRpCg

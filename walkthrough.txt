@@ -1,0 +1,135 @@
+Walkthrough (I've probably forgotten something. I made this about a 6 months ago.):
+
+CHEAT CODE located at the bottom of this document!
+
+Go to the boss room, and get the Door Key. One of the two paths will be blocked. You have time to go the wrong direction without penalty.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][.][.][.] .: Unexplored room
+4 [→][@][←][.][.]     N
+5 [↑][.][↑][.][.]   W + E
+6 [↑][⇄][↑][.][.]    S
+
+Puzzle solutions:
+Both puzzles give hints when you enter incorrect solutions, so feel free to try some stuff before you use the solutions from here.
+  Riddle:
+  There are four correct answers, but the most common ones will be "Ifnkovhgroghprm" and "Nikstlitselpmur."
+  This puzzle was taken from the first King's Quest game, and is one of the most infamous adventure game puzzles of all time.
+  Dials:
+  (Number of turns) modulo (**total** number of notches) = (dial setting)
+  Remember! The zero notch counts, so a 0-9 notched dial has 10 notches.
+  This puzzle was taken from another TF game focused on escaping something! https://www.furaffinity.net/view/25909462/
+
+Endings available up to this point:
+*** Pass out during combat. (Just fight a lot of stuff, and don't use potions)
+*** Run out of time. (Fail puzzles, get lost, or use the "wait" command to run down the clock)
+
+Go to (3, 6), and unlock the door.
+Get the Strange Key from Ogollo.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][.][.][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][→][@][.]     S
+
+Return to the boss room, unlock the door, and claim your reward: the Mysterious Key
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][.][.][.] .: Unexplored room
+4 [.][↓][.][.][.]     N
+5 [.][@][.][.][.]   W + E
+6 [.][.][.][.][.]     S
+
+Get either the armor or sword from Ogollo.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][.][.][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][.][@][.]     S
+
+Find the first key part.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][.][.][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][→][↓]   W + E
+6 [.][.][.][↑][@]     S
+
+Find the second key part.
+   1  2  3  4  5
+1 [.][.][.][→][@] @: You
+2 [.][.][.][↑][←] +: Explored room
+3 [.][.][.][.][↑] .: Unexplored room
+4 [.][.][.][.][↑]     N
+5 [.][.][.][.][↑]   W + E
+6 [.][.][.][.][↑]     S
+
+Find the third key part.
+   1  2  3  4  5
+1 [.][.][.][↓][←] @: You
+2 [.][.][.][↓][.] +: Explored room
+3 [.][.][.][↓][.] .: Unexplored room
+4 [.][.][.][@][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][.][.][.]     S
+
+Unlock the door that leads into the final third of the dungeon.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][@][←][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][.][.][.]     S
+
+New endings:
+*** False escape. (Exit to the north in room (2,1), escaping temporarily. If you missed the Mysterious Key from room (2,5), this is the only new ending.)
+
+Move to room (1,2), and get the Glowing Key. (From here on out, this is a linear path with no obstacles other than the option to leave)
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [@][.][.][.][.] +: Explored room
+3 [.][.][.][.][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][.][.][.]     S
+
+Bring the key back to the chest in room (3,3), open it, and take the Unusual Key from within.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [.][.][@][.][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][.][.][.]     S
+
+With all three keys obtained, you can now face the final boss (in room (1,2)), and unlock the door (in room (1,3)) that leads to all of the main endings.
+   1  2  3  4  5
+1 [.][.][.][.][.] @: You
+2 [.][.][.][.][.] +: Explored room
+3 [←][.][.][.][.] .: Unexplored room
+4 [.][.][.][.][.]     N
+5 [.][.][.][.][.]   W + E
+6 [.][.][.][.][.]     S
+
+New endings:
+*** 3 secret endings! Try to figure out how to get them. They're both located in the same place as all the main endings, but finding them shouldn't be obvious.
+*** Fully Restored (Select options 1 and 1)
+*** Blissfully unaware (Select options 1 and 2)
+*** On all levels except physical (Select options 1 and 3)
+*** Anthro at last! (Select options 2 and 1)
+*** A very surprising turn of events! (Select options 2 and 2)
+*** Nothing changed! (Select options 2 and 3)
+*** Hell yeah, fox time (Select options 3 and 1)
+*** Horror distilled.... Being a fox is fine, actually. (Select options 3 and 2)
+*** Very foxy (Select options 3 and 3)
+
+Cheat:
+In the Python version, type "xyzzy" to enter cheat mode. Here, you can skip combat by moving past monsters, skip finding keys, and skip puzzles by typing "puzzle."
