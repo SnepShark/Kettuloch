@@ -149,7 +149,7 @@ As you cross the dungeon&#39;s threshold, you begin to feel the curse&#39;s ener
 
 &lt;&lt;timed 1.5s t8n&gt;&gt; &quot;Good luck!&quot; she shouts, as the door locks behind you.&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 2s t8n&gt;&gt; [[With no other options presenting themselves, it looks like you need to attempt to escape this place.|TwoSix]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Variables_List" tags="" position="511,1307" size="200,100">/* What would you like characters to call you?
+&lt;&lt;timed 2s t8n&gt;&gt; [[With no other options presenting themselves, it looks like you need to attempt to escape this place.|TwoSix]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Variables_List" tags="" position="532.6666666666666,1298.6666666666667" size="200,100">/* What would you like characters to call you?
 
 Personal pronoun:
 &lt;&lt;textbox &quot;$pro1&quot; &quot;they&quot;&gt;&gt;
@@ -213,7 +213,7 @@ Possessive pronoun:
 &lt;&lt;set $bossMon to 1&gt;&gt; /* Final boss */
 
 /* Random layout */
-&lt;&lt;set $deadEnd to random(1)&gt;&gt; /* If 0, then (1,4) is the dead end. Otherwise, (3,4) is. */
+&lt;&lt;set $deadEnd to random(1)&gt;&gt; /* If 0, then (1,4) was the dead end. Otherwise, (3,4) was. This is no longer used.*/
 
 &lt;&lt;/nobr&gt;&gt;
 
@@ -222,31 +222,11 @@ Possessive pronoun:
 The gate closed as you entered the dungeon. There&#39;s no going back now.&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $playing != 1&gt;&gt;
-Ooh, there&#39;s a sword here. You&#39;ll be taking that!
 &lt;&lt;set $playing to 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    North&lt;br&gt;
 [[West|OneSix]]＋[[East|ThreeSix]]&lt;br&gt;
@@ -378,26 +358,7 @@ You&#39;re a fox. There is nothing even remotely human left in your appearance, 
 As far as architecture goes, this room has basically no defining features. It&#39;s somehow blander than an expired matzah cracker.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑＠‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon16Mon == 1&gt;&gt;
 &lt;&lt;set $Mon16Mon to 0&gt;&gt;
@@ -424,26 +385,7 @@ There&#39;s a door to the east, &lt;&lt;if $doorKey != 1&gt;&gt;but it appears t
 &lt;&lt;set $playing to 1&gt;&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon36Mon == 1&gt;&gt;
 &lt;&lt;set $Mon36Mon to 0&gt;&gt;
@@ -482,10 +424,10 @@ Here&#39;s a hint: When a 0-3 dial set to 3 is turned one notch more, it is then
 Here&#39;s another hint: Modulo is very useful here!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $Puzz15Puzz &gt;=4&gt;&gt;
-One more hint: A dial numbered 0-3 has four notches on it.&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+Two more hints: A dial numbered 0-3 has four notches on it in total, not three. Also, you can solve this puzzle with division instead of modulo.&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $Puzz15Puzz &gt;=5&gt;&gt;
-One last hint: Notches to turn dial % number of notches on dial = correct setting for that dial&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+One last hint: If you use division with a remainder to divide the number of notches to turn a dial by the number of notches on that dial, the remainder will be the correct setting for that dial.&lt;br&gt;&lt;br&gt;Example: A dial with 3 notches on it turned 10 notches over would be set to 1. (10/3=3, remainder 1)&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 What do you turn the first dial to?&lt;br&gt;&lt;&lt;textbox &quot;$d1set&quot; 0&gt;&gt;&lt;br&gt;&lt;br&gt;
 
@@ -507,26 +449,7 @@ If you ever end up facing something like this again, a calculator might be helpf
 &lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑＠‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Puzz15Puzz == 0 or $Puzz15Puzz == 5&gt;&gt;
    [[North|OneFour]]&lt;br&gt;
@@ -544,26 +467,7 @@ West＋East&lt;br&gt;
 Oh, good. You&#39;re glad that completing that puzzle is leading to somewhere useful instead of just a dead end or something.&lt;br&gt;It would be extremely frustrating if a puzzle like that didn&#39;t lead to meaningful progression through the dungeon.&lt;&lt;else&gt;&gt;It looks like this route should take you back to the entrance. The other way would too, but hey, maybe there will be something interesting this way.&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑＠‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 
    North&lt;br&gt;
@@ -602,26 +506,7 @@ The room to the South has been sealed off now, but you&#39;ve retrieved the myst
 
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon24Mon == 1&gt;&gt;
 &lt;&lt;set $Mon24Mon to 0&gt;&gt;
@@ -677,26 +562,7 @@ You&#39;ve solved the puzzle in this room!
 &lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Puzz35Puzz == 0&gt;&gt;
    [[North|ThreeFour]]&lt;br&gt;
@@ -712,7 +578,7 @@ West＋East&lt;br&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="FourSix" tags="" position="1029,917" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;if $strangeKey != 1&gt;&gt;
 &lt;&lt;set $strangeKey to 1&gt;&gt;
 A ghostly figure greets you as you enter the room. &lt;br&gt;&lt;br&gt;&quot;Hello! Welcome to my shop! I&#39;m Ogollo, the largest supplier of adventuring goods and services in pocket dimension dungeons! I don&#39;t have much available for you in this shop, due to the limitations the owner of this dungeon has placed on me, but you can be sure that if it weren&#39;t for the rules of this game, you&#39;d have a larger selection of armors and potions available to you in one of my shops than you would find in any other shop across the many worlds I offer my services on.&lt;br&gt;&lt;br&gt;
-As for right now, my inventory has been artificially limited to a set of 10 coin armor tailored for someone of your current condition. I can assure you that, even as your body changes, this armor will continue to fit well.&lt;br&gt;&lt;br&gt;
+As for right now, my inventory has been artificially limited to a set of 10 coin armor tailored for someone of your current condition. I can assure you that, even as your body changes, this armor will continue to fit well.&lt;br&gt;&lt;br&gt;I&#39;ll give you a sword too, but don&#39;t expect to keep using that once you have paws, haha.&lt;br&gt;&lt;br&gt;
 Oh, and I also have this strange key for you, but I&#39;m not quite sure what it unlocks. That one&#39;s free, courtesy of the dungeon&#39;s owner. I thought it might unlock the chest that they put in the other room they let me set up shop in, but it doesn&#39;t seem to fit.&lt;br&gt;So, what would you like to buy?&quot;
 &lt;&lt;else&gt;&gt;
 &quot;Welcome back!&quot;
@@ -720,31 +586,12 @@ Oh, and I also have this strange key for you, but I&#39;m not quite sure what it
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $money &gt;= 10 and $armorRating == 0&gt;&gt;
-	&lt;&lt;linkappend &quot;Buy the armor&quot;&gt;&gt;
+	&lt;&lt;linkappend &quot;Buy the armor and sword&quot;&gt;&gt;
 		&lt;&lt;set $armorRating to 2&gt;&gt;
 	&lt;&lt;/linkappend&gt;&gt;
 &lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    [[North|FourFive]]&lt;br&gt;
 [[West|ThreeSix]]＋East&lt;br&gt;
@@ -782,26 +629,7 @@ You&#39;ve spent some time attempting the puzzle, but it doesn&#39;t seem like y
 Oh, good. You&#39;re glad that completing that puzzle is leading to somewhere useful instead of just a dead end or something.&lt;br&gt;It would be extremely frustrating if a puzzle like that didn&#39;t lead to meaningful progression through the dungeon.&lt;&lt;else&gt;&gt;It looks like this route should take you back to the entrance. The other way would too, but hey, maybe there will be something interesting this way.&lt;&lt;/if&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 
    North&lt;br&gt;
@@ -817,26 +645,7 @@ Oh, good. You&#39;re glad that completing that puzzle is leading to somewhere us
 This is the dungeon&#39;s kitchen. It&#39;s remarkably clean, surprisingly.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon45Mon == 1&gt;&gt;
 &lt;&lt;set $Mon45Mon to 0&gt;&gt;
@@ -859,26 +668,7 @@ West＋[[East|FiveFive]]&lt;br&gt;
 This room appears to be a barracks of some sort, with beds lining the walls. Do the monsters all sleep here?&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon55Mon == 1&gt;&gt;
 &lt;&lt;set $Mon55Mon to 0&gt;&gt;
@@ -899,29 +689,10 @@ There is a $monName here! Before you can move again, you&#39;ll need to [[fight]
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="FiveFour" tags="" position="1143,676" size="100,100">&lt;&lt;nobr&gt;&gt;
 
-This room appears to be a dressing room and a green room, like you would see at a theater.&lt;br&gt;This must be where the monsters get their hair and makeup done before you encounter them.&lt;br&gt;&lt;br&gt;
+This room appears to be a dressing room and a green room, like you would see at a theater.&lt;br&gt;&lt;br&gt;This must be where the monsters get their hair and makeup done before you encounter them.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon54Mon == 1&gt;&gt;
 &lt;&lt;set $Mon54Mon to 0&gt;&gt;
@@ -941,7 +712,9 @@ West＋East&lt;br&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="FiveSix" tags="" position="1145,919" size="100,100">&lt;&lt;nobr&gt;&gt;
 &#39;Tis a dead end, but at least there&#39;s a chest here!&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $keyPart1 == 0&gt;&gt;
-Opening it up, you collect one third of a key. Hopefully this will be useful!&lt;br&gt;&lt;br&gt;
+Opening it up, you find one third of a key. 
+&lt;&lt;if $timeSpent &gt; 50&gt;&gt;Your paws make it pretty difficult to grasp it, but you manage to pick up the key an put it into your bag. &lt;&lt;/if&gt;&gt;
+Hopefully this will be useful!&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $keyPart1 to 1&gt;&gt;
 
 [[return|FiveFive]]
@@ -955,26 +728,7 @@ You&#39;ve already collected the key part from within it though.&lt;br&gt;&lt;br
 This room is in utter disarray.&lt;br&gt;You really should avoid stepping on the broken bits of ceramic on the ground.&lt;br&gt;Those are quite sharp!&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon53Mon == 1&gt;&gt;
 &lt;&lt;set $Mon53Mon to 0&gt;&gt;
@@ -995,26 +749,7 @@ West＋East&lt;br&gt;
 If this room had a middle name, it would be &quot;Clutter.&quot; Unfortunately, none of the clutter looks like it will be very helpful in getting you out of here.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon52Mon == 1&gt;&gt;
 &lt;&lt;set $Mon52Mon to 0&gt;&gt;
@@ -1031,29 +766,10 @@ The $monName is here! Before you can move again, you&#39;ll need to [[fight][$pa
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="FourTwo" tags="" position="1023,442" size="100,100">&lt;&lt;nobr&gt;&gt;
 
-This room&#39;s walls have all been painted maroon.&lt;br&gt;&lt;br&gt;
+Each of the four walls of this room feature what appears to be an  intricate stained glass window depicting frolicking foxes. Light pours into the room from each of them, projecting their designs onto the polished stone floor.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon42Mon == 1&gt;&gt;
 &lt;&lt;set $Mon42Mon to 0&gt;&gt;
@@ -1074,26 +790,7 @@ West＋[[East|FiveTwo]]&lt;br&gt;
 There is an unlockable door to the west.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon43Mon == 1&gt;&gt;
 &lt;&lt;set $Mon43Mon to 0&gt;&gt;
@@ -1115,29 +812,10 @@ West＋East&lt;br&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="FourOne" tags="" position="1022,333" size="100,100">&lt;&lt;nobr&gt;&gt;
 
-This room&#39;s walls have all been painted maroon.&lt;br&gt;&lt;br&gt;
+Everything in this room has been coated in a &lt;i&gt;very&lt;/i&gt; thick layer of maroon paint.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $Mon55Mon == 1&gt;&gt;
 &lt;&lt;set $Mon55Mon to 0&gt;&gt;
@@ -1154,7 +832,7 @@ West＋[[East|FiveOne]]&lt;br&gt;
 
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="FiveOne" tags="" position="1143,334" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $keyPart3 == 0&gt;&gt;
-You collect one third of a key.&lt;br&gt;&lt;br&gt;
+You collect one third of a key.&lt;&lt;if $timeSpent &gt; 50&gt;&gt;..&lt;br&gt;&lt;br&gt;...with some difficulty.&lt;br&gt;&lt;br&gt;Your paws are quite cute, but dang, they really do make manipulating small objects difficult.&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;br&gt;
 &lt;&lt;set $keyPart3 to 1&gt;&gt;
 
 [[return|FourOne]]
@@ -1178,35 +856,17 @@ You&#39;ve already collected the key part form this room.&lt;br&gt;&lt;br&gt;
 
 It&#39;s Ogollo again! It looks like this stall has different items, but one item stands out. Ogollo is intently examining a glowing purple chest. This must be the chest that he thought the strange key might fit.&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $glowingKey == 0&gt;&gt;
-&quot;Oh, It&#39;s you again! I don&#39;t think you actually want to buy anything from me right now, but if you find the key to this chest, definitely bring it back here!&quot;&lt;br&gt;&lt;br&gt;
+&quot;Oh, hello once again! I don&#39;t think you actually want to buy anything from me right now, but if you find the key to this chest, definitely bring it back here!&quot;&lt;br&gt;&lt;br&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $unusualKey == 0 or $timespent != 51&gt;&gt;
-&lt;&lt;set $unusualKey to 1&gt;&gt;
+&lt;&lt;set $unusualKey to 1&gt;&gt; 
 Indeed, the glowing key fits into the chest! And within it... there&#39;s another key.&lt;br&gt;&lt;br&gt;You clumsily grab the key in your mouth, and stuff it under your armor with the other keys. You&#39;re getting worryingly more foxy by the second!
 &lt;&lt;else&gt;&gt;
 You already took the key from the chest.&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;br&gt;
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
 
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    North&lt;br&gt;
 [[West|TwoThree]]＋[[East|FourThree]]&lt;br&gt;
@@ -1218,26 +878,7 @@ You already took the key from the chest.&lt;&lt;/if&gt;&gt;
 Hopefully this room is close to the exit.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    [[North|TwoTwo]]&lt;br&gt;
 West＋[[East|ThreeThree]]&lt;br&gt;
@@ -1249,26 +890,7 @@ West＋[[East|ThreeThree]]&lt;br&gt;
 The room is incredibly dark. Somehow, the light from the adjacent rooms is barely entering into this one&lt;br&gt;&lt;br&gt;It&#39;s probably due to magic or something like that. Hopefully there isn&#39;t anything dangerous in this room, because it&#39;s really hard to see much here.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    North&lt;br&gt;
 West＋[[East|Timesink]]&lt;br&gt;
@@ -1280,26 +902,7 @@ West＋[[East|Timesink]]&lt;br&gt;
 The massive stone walls in this room seem to stretch up forever.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    [[North|ThreeOne]]&lt;br&gt;
 [[West|TwoTwo]]＋East&lt;br&gt;
@@ -1311,26 +914,7 @@ The massive stone walls in this room seem to stretch up forever.&lt;br&gt;&lt;br
 There is an etching on the floor of this room. It reads &quot;This room doesn&#39;t contain any traps.&quot;&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    North&lt;br&gt;
 [[West|TwoOne]]＋East&lt;br&gt;
@@ -1342,26 +926,7 @@ There is an etching on the floor of this room. It reads &quot;This room doesn&#3
 At last! The exit to the dungeon is just to the north of here!&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖＠‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
    [[North|Ending 3]]&lt;br&gt;
 [[West|OneOne]]＋[[East|ThreeOne]]&lt;br&gt;
@@ -1387,58 +952,7 @@ At last! The exit to the dungeon is just to the north of here!&lt;br&gt;&lt;br&g
 You can&#39;t quite figure out what this room&#39;s purpose is.&lt;br&gt;&lt;br&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑＠‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
-
-   North&lt;br&gt;
-West＋[[East|TwoOne]]&lt;br&gt;
-   [[South|OneTwo]]
-
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $unusualKey == 1&gt;&gt;
-
-
-Oh, so &lt;i&gt;that&#39;s&lt;/i&gt; what this room is for!&lt;br&gt;&lt;br&gt;
-
-
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑＠‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀＠: You
-
-&lt;br&gt;2 ⦑&lt;&lt;if hasVisited(&quot;OneTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $bossMon == 1&gt;&gt;
 &lt;&lt;set $bossMon to 0&gt;&gt;
@@ -1454,37 +968,19 @@ West＋[[East|TwoOne]]&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="OneTwo" tags="" position="663,453" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="OneTwo" tags="" position="663,451.3333333333333" size="100,100">&lt;&lt;nobr&gt;&gt;
 
 It&#39;s faint, but the walls of this room are emitting purple light. A large, ominous door stands to the South.
 
-&lt;br&gt;&lt;br&gt;There are three slots for keys next to the door, which are shaped like the key that Ogollo offered to you. One glows&lt;br&gt;&lt;br&gt;What secrets could be hidden behind it?&lt;br&gt;&lt;br&gt;Do you even have time to find out?&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;There are three slots for keys next to the door, which are shaped like the key that Ogollo offered to you.&lt;br&gt;&lt;br&gt;What secrets could be hidden behind it?&lt;br&gt;&lt;br&gt;Do you even have time to find out?&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $glowingKey == 0&gt;&gt;
 &lt;&lt;set $glowingKey to 1&gt;&gt;
-A key sits in the middle of the room, glowing just like the walls. You take it, but is there anything you&#39;ve seen in another room that it might fit? &lt;br&gt;&lt;br&gt;
+A key sits in the middle of the room, glowing just like the walls. It does fit in one of the three keyholes, but without all three keys, the door won&#39;t budge, so you take the key. Is there anything you&#39;ve seen in another room that it might fit?&lt;br&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 
 
- １ ２ ３ ４ ５
-&lt;br&gt;1 ⦑&lt;&lt;if hasVisited(&quot;OneOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveOne&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
+&lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
-⠀＠: You
-
-&lt;br&gt;2 ⦑＠‖&lt;&lt;if hasVisited(&quot;TwoTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveTwo&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀⬤: Explored location
-
-&lt;br&gt;3 ⦑&lt;&lt;if hasVisited(&quot;OneThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveThree&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-⠀◯: Unexplored location
-
-&lt;br&gt;4 ⦑&lt;&lt;if hasVisited(&quot;OneFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFour&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-&lt;br&gt;5 ⦑&lt;&lt;if hasVisited(&quot;OneFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveFive&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒
-
-/* &lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt; */
-
-&lt;br&gt;6 ⦑&lt;&lt;if hasVisited(&quot;OneSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;TwoSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;ThreeSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FourSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;‖&lt;&lt;if hasVisited(&quot;FiveSix&quot;)&gt;&gt;⬤&lt;&lt;else&gt;&gt;◯&lt;&lt;/if&gt;&gt;⦒&lt;br&gt;
 &lt;&lt;if $unusualKey == 0&gt;&gt;
    [[North|OneOne]]&lt;br&gt;
 West＋East&lt;br&gt;
@@ -1511,7 +1007,7 @@ There is a $monName here. Before you can move again, you&#39;ll need to [[fight]
 
 /*Once the monster is defeated, stuff appears here*/
 
-&lt;&lt;/if&gt;&gt; /* Don&#39;t forget! */</tw-passagedata><tw-passagedata pid="49" name="Ending 1" tags="mainmenu" position="954.6666666666666,1571" size="100,100">&lt;center&gt;Ending 12&lt;/center&gt;&lt;&lt;set $playing == 0&gt;&gt;
+&lt;&lt;/if&gt;&gt; /* Don&#39;t forget! */</tw-passagedata><tw-passagedata pid="49" name="Ending 1" tags="mainmenu" position="954,1571" size="100,100">&lt;center&gt;Ending 12&lt;/center&gt;&lt;&lt;set $playing == 0&gt;&gt;
 
 You&#39;ve lost the battle, and with it, any hope of successfully escaping.
 
@@ -1677,18 +1173,13 @@ You&#39;re a fursuit.
 
 After some time, XxBunnyDemiGodBunnyxX restores your animacy, giving you time to confirm your choice or choose something else.
 
-[[The end|Good end epilogue]]</tw-passagedata><tw-passagedata pid="64" name="Good end epilogue" tags="" position="270,791" size="100,100">Congrats! You&#39;ve reached one of the twelve main endings!
-
-I really hope that you&#39;ve enjoyed your time with Escape from Kettuloch!
+[[The end|Good end epilogue]]</tw-passagedata><tw-passagedata pid="64" name="Good end epilogue" tags="" position="418.33333333333337,364.3333333333333" size="100,100">Congrats! You&#39;ve reached one of the main endings!
 
 You can press the back button in the pull-out menu to see more endings. There are a few secret ones to find! (If you need help, check the walkthrough.)
 
-If you want to hear when new (and likely much better!) games are out, the best place to follow me is probably [[Itch.io|https://snepshark.itch.io/]].
+Thank you for playing, I really hope that you&#39;ve enjoyed your time with Escape from Kettuloch!
 
-
-Oh! If you don&#39;t mind, I&#39;ve set up a [[short survey here|https://forms.gle/FCouhWoJR1ggMims8]].
-
-If you can estimate about how long it took to complete the game, that&#39;d be &lt;b&gt;super&lt;/b&gt; helpful! (Plus, I&#39;d love to hear any feedback or suggestions that you have!)</tw-passagedata><tw-passagedata pid="65" name="Ending 6" tags="" position="216,11" size="100,100">&lt;center&gt;EPILOGUE
+If you want to hear when my next game (which I&#39;ve already started making [[art/animations|https://snepshark.itch.io/escape-from-kettuloch/devlog/368626/dogress-bar-new-game]] for!) is out, following me on [[itch.io|https://snepshark.itch.io/]] is a good idea!</tw-passagedata><tw-passagedata pid="65" name="Ending 6" tags="" position="216,11" size="100,100">&lt;center&gt;EPILOGUE
 Ending 1 - Fully Restored&lt;/center&gt;
 
 You escaped XxBunnyDemiGodBunnyxX&#39;s stream, body and mind intact! You might need to deal with another demi-god at some point in the future, but you&#39;ll cross that bridge when and if you come to it. For now, you can rest easy for a bit.
@@ -1775,6 +1266,8 @@ After some time, XxBunnyDemiGodBunnyxX restores your animacy, giving you time to
 
 Please, if you&#39;re reading this, tell me! It&#39;d totally make my day to know that someone cared enough about my game that they&#39;d open it up and see its inner workings.</tw-passagedata><tw-passagedata pid="77" name="Notes for anyone downloading this to take some code" tags="" position="1391,134" size="200,100">Notes for anyone downloading this to take some code:
 
+The code for the maps was written by u/LynxSnowCat on Reddit!
+
 &quot;Variables_List&quot; is where I initialize most of the variables, to keep them consolidated.
 
 The rooms that make up the dungeon are named for their position, from &quot;OneOne&quot; to &quot;FiveSix.&quot; If you&#39;re looking for something that happens in a specific room, that&#39;s probably what you&#39;re looking for.
@@ -1787,7 +1280,7 @@ The falling action is just story, but if you need to know where that is, those a
 
 The ending selection happens in &quot;select1&quot; - 3.
 
-The two puzzles are located in rooms OneFive and ThreeFive, but the passages titled &quot;Puzz15&quot; and &quot;Puzz35&quot; are also important.</tw-passagedata><tw-passagedata pid="78" name="gallery_menu" tags="" position="1416,1081" size="100,100">[[Back to intro|Variables_List]]&lt;&lt;set _achievements to recall(&#39;KettuAchievements&#39;, {})&gt;&gt;
+The two puzzles are located in rooms OneFive and ThreeFive, but the passages titled &quot;Puzz15&quot; and &quot;Puzz35&quot; are also important.</tw-passagedata><tw-passagedata pid="78" name="gallery_menu" tags="" position="1409.3333333333333,1139.3333333333333" size="100,100">[[Back to intro|Variables_List]]&lt;&lt;set _achievements to recall(&#39;KettuAchievements&#39;, {})&gt;&gt;
 
 &lt;center&gt;&lt;h2&gt;[[Ending gallery|ending_gallery]]&lt;/h2&gt;
 View all of the endings that you have obtained, and get hints for finding the rest!
@@ -1816,7 +1309,27 @@ After some time, XxBunnyDemiGodBunnyxX restores your animacy, giving you time to
 
 Well, hopefully you still have time!
 
-[[Continue|ThreeTwo]]</tw-passagedata></tw-storydata>
+[[Continue|ThreeTwo]]</tw-passagedata><tw-passagedata pid="81" name="meow_12345" tags="" position="1421.6666666666665,967.0000000000001" size="200,100">/* Written by u/LynxSnowcat on Reddit, clean map */
+ &lt;&lt;nobr&gt;&gt;   
+	&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+        &lt;&lt;set _cn to [&#39;One&#39;,&#39;Two&#39;,&#39;Three&#39;,&#39;Four&#39;,&#39;Five&#39;,&#39;Six&#39;]&gt;&gt;
+          &lt;table style=&quot;text-align:center&quot;&gt;
+              &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;１&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;２&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;３&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;４&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;５&lt;/td&gt;&lt;/tr&gt;
+               &lt;&lt;for _i to 0; _i lt _cn.length; _i++&gt;&gt;
+                  &lt;tr&gt;&lt;td&gt;&lt;&lt;print _i&gt;&gt; &lt;/td&gt;&lt;td&gt;&amp;langd;&lt;/td&gt;
+                  &lt;&lt;for _j to 0; _j lt _cn.length-1; _j++&gt;&gt;
+                     &lt;!--td&gt; &lt;&lt;print _cn[_j]+_cn[_i]&gt;&gt; &lt;/td--&gt;
+                     &lt;!--td&gt; &lt;&lt;= hasVisited(_cn[_j]+_cn[_i])?&quot;&amp;#x2b1c;&quot;:&quot;&amp;#x26aa;&quot;&gt;&gt; &lt;/td--&gt;
+                      &lt;td&gt; &lt;&lt;= passage()==(_cn[_j]+_cn[_i])?&quot;@&quot;:hasVisited(_cn[_j]+_cn[_i])?&quot;&amp;#x2b1c;&quot;:&quot;&amp;#x26aa;&quot;&gt;&gt; &lt;/td&gt;
+                      &lt;&lt;if _j lt _cn.length-2&gt;&gt;&lt;td&gt;&amp;vert;&lt;/td&gt;&lt;&lt;/if&gt;&gt;
+                  &lt;&lt;/for&gt;&gt;
+                  &lt;td&gt;&amp;rangd;&lt;/td&gt;&lt;/tr&gt;
+              &lt;&lt;/for&gt;&gt;
+          &lt;/table&gt;
+  &lt;/td&gt;&lt;td&gt;＠: You&lt;br&gt;
+  &amp;#x2b1c;: Explored location&lt;br&gt;
+  &amp;#x26aa;: Unexplored location&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+  &lt;&lt;/nobr&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&null!==n&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",r="\\s"===e?"\\S":e.replace(/^\[/,"[^"),n="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",a=n.replace("\\-",""),i=function(){return"("+n+"+)\\(([^\\)\\|\\n]+)\\):|"+t+"*("+n+"+)"+t+"*:([^;\\|\\n]+);|"+t+"*((?:[#.]"+n+"+"+t+"*)+);"}();return Object.freeze({space:e,spaceNoTerminator:t,lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:r,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:n,anyLetterStrict:a,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssIdOrClassSigil:"[#.]",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:i,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),i=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a,touch:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return a}function t(){return a&&document[a.stateProperty]||"visible"}function r(){return Boolean(a)}function n(){return Boolean(a&&document[a.hiddenProperty])}var a=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return undefined}();return Object.freeze(Object.defineProperties({},{vendor:{get:e},state:{get:t},isEnabled:{value:r},isHidden:{value:n},hiddenProperty:{value:a&&a.hiddenProperty},stateProperty:{value:a&&a.stateProperty},changeEvent:{value:a&&a.changeEvent}}))}(),Fullscreen=function(){function e(e){var t=e||document.documentElement;return t===document.documentElement&&("msRequestFullscreen"===f.requestFn||Browser.isOpera&&Browser.operaVersion<15)&&(t=document.body),t}function t(){return f}function r(){return(f||null)&&document[f.element]}function n(){return Boolean(f&&document[f.isEnabled])}function a(){return Boolean(f&&document[f.element])}function i(t,r){var n=this;if(!f)return Promise.reject(new Error("fullscreen not supported"));var i=e(r);if("function"!=typeof i[f.requestFn])return Promise.reject(new Error("fullscreen not supported"));if(a())return Promise.resolve();if(p())return i[f.requestFn](t);var o=".Fullscreen_requestFullscreen";return new Promise(function(e,r){jQuery(i).off(o).one(""+f.errorEvent+o+" "+f.changeEvent+o,function(t){jQuery(n).off(o),t.type===f.errorEvent?r(new Error("unknown fullscreen request error")):e()}),i[f.requestFn](t)})}function o(){var e=this;if(!f||"function"!=typeof document[f.exitFn])return Promise.reject(new TypeError("fullscreen not supported"));if(!a())return Promise.reject(new TypeError("fullscreen mode not active"));if(p())return document[f.exitFn]();var t=".Fullscreen_exitFullscreen";return new Promise(function(r,n){jQuery(document).off(t).one(""+f.errorEvent+t+" "+f.changeEvent+t,function(a){jQuery(e).off(t),a.type===f.errorEvent?n(new Error("unknown fullscreen exit error")):r()}),document[f.exitFn]()})}function s(e,t){return a()?o():i(e,t)}function u(t,r){if(f){var n=e(r);$(n).on(f.changeEvent,t)}}function l(t,r){if(f){var n=e(r);t?$(n).off(f.changeEvent,t):$(n).off(f.changeEvent)}}function c(t,r){if(f){var n=e(r);$(n).on(f.errorEvent,t)}}function d(t,r){if(f){var n=e(r);t?$(n).off(f.errorEvent,t):$(n).off(f.errorEvent)}}var f=function(){try{return Object.freeze([{isEnabled:"fullscreenEnabled",element:"fullscreenElement",requestFn:"requestFullscreen",exitFn:"exitFullscreen",changeEvent:"fullscreenchange",errorEvent:"fullscreenerror"},{isEnabled:"webkitFullscreenEnabled",element:"webkitFullscreenElement",requestFn:"webkitRequestFullscreen",exitFn:"webkitExitFullscreen",changeEvent:"webkitfullscreenchange",errorEvent:"webkitfullscreenerror"},{isEnabled:"mozFullScreenEnabled",element:"mozFullScreenElement",requestFn:"mozRequestFullScreen",exitFn:"mozCancelFullScreen",changeEvent:"mozfullscreenchange",errorEvent:"mozfullscreenerror"},{isEnabled:"msFullscreenEnabled",element:"msFullscreenElement",requestFn:"msRequestFullscreen",exitFn:"msExitFullscreen",changeEvent:"MSFullscreenChange",errorEvent:"MSFullscreenError"}].find(function(e){return e.isEnabled in document}))}catch(e){}return undefined}(),p=function(){function e(){if(null!==t)return t;if(t=!1,f)try{var e=document.exitFullscreen();e.catch(function(){}),t=e instanceof Promise}catch(e){}return t}var t=null;return e}();return Object.freeze(Object.defineProperties({},{vendor:{get:t},element:{get:r},isEnabled:{value:n},isFullscreen:{value:a},request:{value:i},exit:{value:o},toggle:{value:s},onChange:{value:u},offChange:{value:l},onError:{value:c},offError:{value:d}}))}(),_ref3=function(){function e(e){for(var t=e.cloneNode(!0),r=document.createDocumentFragment(),n=void 0;null!==(n=t.firstChild);){if(n.nodeType===Node.ELEMENT_NODE)switch(n.nodeName.toUpperCase()){case"BR":case"DIV":case"P":r.appendChild(document.createTextNode(" "))}r.appendChild(n)}return r.textContent}function t(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)return e;if(e instanceof String)return String(e);if(e instanceof Number)return Number(e);if(e instanceof Boolean)return Boolean(e);if("function"==typeof e.clone)return e.clone(!0);if(e.nodeType&&"function"==typeof e.cloneNode)return e.cloneNode(!0);var r=void 0;return e instanceof Array?r=new Array(e.length):e instanceof Date?r=new Date(e.getTime()):e instanceof Map?(r=new Map,e.forEach(function(e,n){return r.set(n,t(e))})):e instanceof RegExp?r=new RegExp(e):e instanceof Set?(r=new Set,e.forEach(function(e){return r.add(t(e))})):r=Object.create(Object.getPrototypeOf(e)),Object.keys(e).forEach(function(n){return r[n]=t(e[n])}),r}function r(e){
