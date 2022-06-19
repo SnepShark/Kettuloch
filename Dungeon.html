@@ -147,6 +147,11 @@ Example selectors: */
     border: 1px solid white;
     border-color: #eee
 }
+.meow_fx {
+      display: inline-block;
+      border-bottom: 1px solid;
+      margin: 0 0.5em;
+ }
 
 #ui-bar {
 
@@ -344,47 +349,75 @@ The gate closed as you entered the dungeon. There&#39;s no going back now.&lt;br
    South
 
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="PassageFooter" tags="" position="788.3333333333333,1410.3333333333333" size="100,100">&lt;&lt;if $playing == 1&gt;&gt;&lt;&lt;if $timeSpent % 2 == 0&gt;&gt; &lt;&lt;set $health += 1&gt;&gt; &lt;&lt;/if&gt;&gt;
-&lt;hr&gt;
-  Time Remaining:&lt;&lt;set $timeSpent += 1&gt;&gt; &lt;&lt;print 80 - $timeSpent&gt;&gt;
-  Potions: &lt;&lt;print $potions&gt;&gt; - &lt;&lt;linkappend &quot;Use potions&quot; t8n&gt;&gt; You gain &lt;&lt;print $potions * 10&gt;&gt; health!&lt;&lt;set $health += $potions * 10&gt;&gt;&lt;&lt;set $potions to 0&gt;&gt;&lt;&lt;/linkappend&gt;&gt;
-  Health: &lt;&lt;print $health&gt;&gt;
-&lt;&lt;nobr&gt;&gt;
-&lt;&lt;if $timeSpent &lt; 50 and $armorRating == 2&gt;&gt;  Weapon: Sword&lt;&lt;else&gt;&gt;&lt;&lt;if $timeSpent &lt; 50&gt;&gt;  Weapon: None. &lt;&lt;else&gt;&gt;  Weapon: Nothing. Foxes like you aren&#39;t able to hold swords.&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $armorRating == 2&gt;&gt;  You&#39;re wearing armor.&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
-  Money: &lt;&lt;print $money&gt;&gt;&lt;br&gt;&lt;hr&gt;
-Description:&lt;br&gt;
-&lt;&lt;if $timeSpent &lt; 10&gt;&gt;You&#39;re looking like you always have. That might not be the case for long though.
-	&lt;&lt;elseif $timeSpent &gt;= 10 and $timeSpent &lt; 20&gt;&gt;While you are otherwise human in appearance, the fuzzy ears atop your head are a concrete reminder that you will need to move quickly if you want to leave as anything but a fox.&lt;br&gt;The ears are kinda cute, but the transformation really messed with your inner ear for a bit.
-	&lt;&lt;elseif $timeSpent &gt;= 20 and $timeSpent &lt; 30&gt;&gt;First the ears, now a tail? What&#39;s next?&lt;br&gt;Well, whatever form the next step takes, it certainly won&#39;t be making you look any more human.
-	&lt;&lt;elseif $timeSpent &gt;= 30 and $timeSpent &lt; 40&gt;&gt;If you can lift the curse, you might return to normal, but if you don&#39;t, at least you can look forward to being very popular with furries...&lt;br&gt;...well... You would if it weren&#39;t for your face. You&#39;d have a pretty easy time getting cast in &quot;Cats&quot; though. Or, you could be vivisected as soon as you&#39;re out of here, but it&#39;s probably not a good idea to think about that.
-	&lt;&lt;elseif $timeSpent &gt;= 40 and $timeSpent &lt; 50&gt;&gt;What a relief. Can you imagine how creepy you would have looked if your face changed last? You&#39;d be like one of those paintings of animals where the artist has clearly only ever painted human faces.&lt;br&gt;You&#39;re looking pretty &quot;foxy&quot; right now, what with the ears, tail, muzzle, and fur.
-	&lt;&lt;elseif $timeSpent &gt;= 50 and $timeSpent &lt; 60&gt;&gt;Paws? Couldn&#39;t they have taken just a bit longer to come in? Not having thumbs would make most things harder under normal circumstances, but now you&#39;re being left without the ability to use your weapons? Ugh.
-	&lt;&lt;elseif $timeSpent &gt;= 60 and $timeSpent &lt; 70&gt;&gt;What a miniscule change. Digitigrade legs? After such an inconvenient change, you kinda expected something worse. You&#39;re nearing the end of your changes though, so you can expect something along those lines very soon.
-	&lt;&lt;elseif $timeSpent &gt;= 70&gt;&gt;You&#39;re almost entirely indistinguishable from any other fox now. The hair you had prior to the transformation still sits atop your head, still styled just as it was. Along with that, your eyes still appear more human-like than those of most foxes, but you&#39;re definitely more fox than human at this point. Actually, you probably passed that threshold a while ago.
-	&lt;&lt;elseif $timeSpent &gt;= 79&gt;&gt;You&#39;re a fox. There is nothing even remotely human left in your appearance. Calling you &quot;foxy&quot; at this point would be a dramatic understatement.
-	&lt;&lt;/if&gt;&gt;
-&lt;br&gt;&lt;hr&gt;
-Conditions:&lt;br&gt;
-	&lt;&lt;if $timeSpent &lt; 10&gt;&gt;Unchanged&lt;br&gt;&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 10&gt;&gt;Fox ears&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 20&gt;&gt;Tail&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 30&gt;&gt;Fur&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 40&gt;&gt;Snout&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 50&gt;&gt;Paws&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 60&gt;&gt;Digitigrade legs&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 70&gt;&gt;All fours&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $timeSpent &gt; 80&gt;&gt;100% fox&lt;br&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;br&gt;&lt;span style=&quot;color:#111111&quot;&gt;&lt;center&gt;nikstlitslepmur&lt;/center&gt;&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;&lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="7" name="TF Stage 1" tags="" position="956,1294" size="100,100">&lt;&lt;set $justTFed to 1&gt;&gt;Suddenly, the world goes completely silent. Dizziness sets in, and it is hard to hold yourself up. After a few seconds have passed you begin to hear your surroundings again. For a few more seconds, your surroundings are muffled, as if your head were underwater. As suddenly as it started, your hearing returns. Whatever was blocking it is gone, but something is different. The sounds coming from in front of you sound much louder than how they did before. Something has obviously changed.
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="PassageFooter" tags="" position="788.3333333333333,1410.3333333333333" size="100,100">&lt;&lt;nobr&gt;&gt;
+  &lt;div id=&quot;meow_foot&quot;&gt;
+    &lt;&lt;if $playing == 1&gt;&gt;
+      &lt;&lt;if $timeSpent % 2 == 0&gt;&gt; &lt;&lt;set $health += 1&gt;&gt; &lt;&lt;/if&gt;&gt;
+      &lt;div class=&quot;meow_fx&quot;&gt;
+        Time Remaining:&lt;&lt;set $timeSpent += 1&gt;&gt;&lt;br&gt;
+        &lt;&lt;print 80 - $timeSpent&gt;&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;foot_health&quot; class=&quot;meow_fx&quot;&gt;
+        Potions:&lt;br&gt;
+        &lt;&lt;print $potions&gt;&gt; - 
+        &lt;!-- replaces named div when link is activated. --&gt;
+        &lt;&lt;link &quot;Use potions&quot;&gt;&gt;&lt;&lt;replace &quot;#foot_health&quot; t8n&gt;&gt;
+          &lt;&lt;set $health += $potions * 10&gt;&gt;&lt;&lt;set $potions to 0&gt;&gt;
+          Potions:&lt;br&gt;
+          &lt;&lt;print $potions&gt;&gt; - You gained health!&lt;br&gt;
+          Health:&lt;br&gt;
+          &lt;&lt;print $health&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;br&gt;
+        Health:&lt;br&gt;
+        &lt;&lt;print $health&gt;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;meow_fx&quot;&gt;
+        Equipment:&lt;br&gt;
+        &lt;&lt;if $timeSpent &lt; 50&gt;&gt;Weapon - Sword&lt;&lt;else&gt;&gt;Weapon - Nothing.&lt;br&gt;&lt;span style=&quot;font-size:smaller&quot;&gt;Foxes like you aren&amp;#39;t able to hold swords.&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;if $armorRating == 2&gt;&gt;Armor&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        Money:&lt;br&gt;
+        &lt;&lt;print $money&gt;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;meow_fx&quot;&gt;
+        Conditions:&lt;br&gt;
+        &lt;&lt;if $timeSpent &lt; 10&gt;&gt;Unchanged&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent == 10&gt;&gt;fuzzy ears&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 10&gt;&gt;Fox ears&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 20&gt;&gt;Tail&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 30&gt;&gt;Fur&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 40&gt;&gt;Snout&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 50&gt;&gt;Paws&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 60&gt;&gt;Digitigrade legs&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 70&gt;&gt;All fours&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &gt; 80&gt;&gt;100% fox&lt;br&gt;&lt;&lt;/if&gt;&gt;
+      &lt;/div&gt;
+      &lt;!--div class=&quot;meow_fx&quot;&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;&lt;if $timeSpent &lt;= 20&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt;= 30&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt;= 40&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt;= 50&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt;= 60&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt;= 70&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt;= 80&gt;&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+      &lt;/div--&gt;
+      &lt;div class=&quot;meow_fx&quot;&gt;
+        Description:&lt;br&gt;
+        &lt;&lt;if $timeSpent &lt; 10&gt;&gt;You&amp;#39;re looking like you always have. That might not be the case for long though.
+          &lt;&lt;elseif $timeSpent &gt;= 10 and $timeSpent &lt; 20&gt;&gt;While you are otherwise human in appearance, the fuzzy ears atop your head are a concrete reminder that you will need to move quickly if you want to leave as anything but a fox.&lt;br&gt;The ears are kinda cute, but the transformation really messed with your inner ear for a bit.
+          &lt;&lt;elseif $timeSpent &gt;= 20 and $timeSpent &lt; 30&gt;&gt;First the ears, now a tail? What&amp;#39;s next?&lt;br&gt;Well, whatever form the next step takes, it certainly won&amp;#39;t be making you look any more human.
+          &lt;&lt;elseif $timeSpent &gt;= 30 and $timeSpent &lt; 40&gt;&gt;If you can lift the curse, you might return to normal, but if you don&amp;#39;t, at least you can look forward to being very popular with furries...&lt;br&gt;...well... You would if it weren&amp;#39;t for your face. You&amp;#39;d have a pretty easy time getting cast in &quot;Cats&quot; though. Or, you could be vivisected as soon as you&amp;#39;re out of here, but it&amp;#39;s probably not a good idea to think about that.
+          &lt;&lt;elseif $timeSpent &gt;= 40 and $timeSpent &lt; 50&gt;&gt;What a relief. Can you imagine how creepy you would have looked if your face changed last? You&amp;#39;d be like one of those paintings of animals where the artist has clearly only ever painted human faces.&lt;br&gt;You&amp;#39;re looking pretty &quot;foxy&quot; right now, what with the ears, tail, muzzle, and fur.
+          &lt;&lt;elseif $timeSpent &gt;= 50 and $timeSpent &lt; 60&gt;&gt;Paws? Couldn&amp;#39;t they have taken just a bit longer to come in? Not having thumbs would make most things harder under normal circumstances, but now you&amp;#39;re being left without the ability to use your weapons? Ugh.
+          &lt;&lt;elseif $timeSpent &gt;= 60 and $timeSpent &lt; 70&gt;&gt;What a miniscule change. Digitigrade legs? After such an inconvenient change, you kinda expected something worse. You&amp;#39;re nearing the end of your changes though, so you can expect something along those lines very soon.
+          &lt;&lt;elseif $timeSpent &gt;= 70&gt;&gt;You&amp;#39;re almost entirely indistinguishable from any other fox now. The hair you had prior to the transformation still sits atop your head, still styled just as it was. Along with that, your eyes still appear more human-like than those of most foxes, but you&amp;#39;re definitely more fox than human at this point. Actually, you probably passed that threshold a while ago.
+          &lt;&lt;elseif $timeSpent &gt;= 79&gt;&gt;You&amp;#39;re a fox. There is nothing even remotely human left in your appearance. Calling you &quot;foxy&quot; at this point would be a dramatic understatement.
+        &lt;&lt;/if&gt;&gt;
+      &lt;/div&gt;
+      &lt;span style=&quot;color:#111111&quot;&gt;&lt;center&gt;nikstlitslepmur&lt;/center&gt;&lt;/span&gt;
+    &lt;&lt;/if&gt;&gt;
+  &lt;/div&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="TF Stage 1" tags="" position="956,1294" size="100,100">&lt;&lt;set $justTFed to 1&gt;&gt;Suddenly, the world goes completely silent. Dizziness sets in, and it is hard to hold yourself up. After a few seconds have passed you begin to hear your surroundings again. For a few more seconds, your surroundings are muffled, as if your head were underwater. As suddenly as it started, your hearing returns. Whatever was blocking it is gone, but something is different. The sounds coming from in front of you sound much louder than how they did before. Something has obviously changed.
 
 Regaining your balance, you hold your head as the dizziness subsides, suddenly realizing what has happened as you feel two new fuzzy triangles atop your head.
 
@@ -525,16 +558,16 @@ A stone pedestal stands in the center of this room. On it are two dials. The fir
 A note next to them reads &#39;Starting with both dials set to 0, just turn each one $dialTurns notches, and you&#39;ll be out of here in no time. &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $Puzz15Puzz &gt;=2&gt;&gt;
-Here&#39;s a hint: When a 0-3 dial set to 3 is turned one notch more, it is then set to 0.&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&#39;&#39;Here&#39;s a hint:&#39;&#39; When a 0-3 dial set to 3 is turned one notch more, it is then set to 0.&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $Puzz15Puzz &gt;=3&gt;&gt;
-Here&#39;s another hint: Modulo is very useful here!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&#39;&#39;Here&#39;s another hint:&#39;&#39; Modulo is very useful here!&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $Puzz15Puzz &gt;=4&gt;&gt;
-Two more hints: A dial numbered 0-3 has four notches on it in total, not three. Also, you can solve this puzzle with division instead of modulo.&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&#39;&#39;Two more hints:&#39;&#39; A dial numbered 0-3 has four notches on it in total, not three. Also, you can solve this puzzle with division instead of modulo.&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $Puzz15Puzz &gt;=5&gt;&gt;
-One last hint: If you use division with a remainder to divide the number of notches to turn a dial by the number of notches on that dial, the remainder will be the correct setting for that dial.&lt;br&gt;&lt;br&gt;Example: A dial with 3 notches on it turned 10 notches over would be set to 1. (10/3=3, remainder 1)&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&#39;&#39;One last hint:&#39;&#39; If you use division with a remainder to divide the number of notches to turn a dial by the number of notches on that dial, the remainder will be the correct setting for that dial.&lt;br&gt;&lt;br&gt;Example: A dial with 3 notches on it turned 10 notches over would be set to 1. (10/3=3, remainder 1)&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
 
 What do you turn the first dial to?&lt;br&gt;&lt;&lt;textbox &quot;$d1set&quot; 0&gt;&gt;&lt;br&gt;&lt;br&gt;
 
@@ -693,10 +726,12 @@ Oh, and I also have this strange key for you, but I&#39;m not quite sure what it
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $money &gt;= 10 and $armorRating == 0&gt;&gt;
-	&lt;&lt;linkappend &quot;Buy the armor and sword&quot;&gt;&gt;
-		&lt;&lt;set $armorRating to 2&gt;&gt;
-	&lt;&lt;/linkappend&gt;&gt;
-&lt;br&gt;&lt;br&gt;&lt;&lt;/if&gt;&gt;
+  &lt;&lt;linkappend &quot;Buy the armor&quot;&gt;&gt;
+    &lt;&lt;set $armorRating to 2&gt;&gt;
+    &lt;&lt;replace &quot;#meow_foot&quot;&gt;&gt;&lt;&lt;include PassageFooter&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/linkappend&gt;&gt;
+  &lt;br&gt;&lt;br&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
 
@@ -1147,15 +1182,14 @@ If you want help finding all the endings, there are hints and a walkthrough avai
 You fight the $monName!&lt;br&gt;&lt;br&gt;
 
 They deal &lt;&lt;print $monHealth - $armorRating&gt;&gt; damage to you!
-&lt;&lt;set $health to $health + $armorRating - $monHealth&gt;&gt;
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $health &gt; 0&gt;&gt;
-You emerge victorious, with $health health remaining.&lt;br&gt;&lt;br&gt;
+You emerge victorious, with &lt;&lt;print $health + $armorRating - $monHealth&gt;&gt; health remaining.&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set $playing to 0&gt;&gt;
 &lt;&lt;set $timeSpent to $timeSpent - 1&gt;&gt;
-[[Return|$pastRoom]]
+[[Return|$pastRoom][$health to $health + $armorRating - $monHealth]]
 &lt;&lt;else&gt;&gt;
 You have been defeated.
 
