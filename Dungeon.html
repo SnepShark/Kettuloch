@@ -259,13 +259,13 @@ A woman violently wakes you from your sleep, shaking you as they speak in an urg
 
 &lt;&lt;timed 6s t8n&gt;&gt;An amber colored 7-segment clock above the plaque reads&lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7s t8n&gt;&gt;29, &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 8s t8n&gt;&gt;then 28, &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9s t8n&gt;&gt;27, &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 10s t8n&gt;&gt;26. &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 11s t8n&gt;&gt; Each second it ticks down by one.&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 13s t8n&gt;&gt;[[Suddenly, the doors open as the clock arrives at zero.]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Suddenly, the doors open as the clock arrives at zero." tags="" position="720,1057" size="100,100">The woman pushes you into the doorway on the right before you even have the opportunity to fully parse what they&#39;ve told you, let alone ask any questions about your current situation.
+&lt;&lt;timed 13s t8n&gt;&gt;[[Suddenly, the doors open as the clock arrives at zero.]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Suddenly, the doors open as the clock arrives at zero." tags="" position="720,1057" size="100,100">The woman pushes you into the gateway on the right before you even have the opportunity to fully parse what they&#39;ve told you, let alone ask any questions about your current situation.
 
 As you cross the dungeon&#39;s threshold, you begin to feel the curse&#39;s energy flowing throughout your body.
 
 &lt;&lt;timed 1.5s t8n&gt;&gt; &quot;Good luck!&quot; she shouts, as the door locks behind you.&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 2s t8n&gt;&gt; [[With no other options presenting themselves, it looks like you need to attempt to escape this place.|TwoSix]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Variables_List" tags="" position="532.6666666666666,1298.6666666666667" size="200,100">/* What would you like characters to call you?
+&lt;&lt;timed 2s t8n&gt;&gt; [[With no other options presenting themselves, it looks like you need to attempt to escape this place.|TwoSix]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Variables_List" tags="" position="532,1298" size="200,100">/* What would you like characters to call you?
 
 Personal pronoun:
 &lt;&lt;textbox &quot;$pro1&quot; &quot;they&quot;&gt;&gt;
@@ -334,12 +334,23 @@ Possessive pronoun:
 &lt;&lt;/nobr&gt;&gt;
 
 &lt;&lt;timed 1s&gt;&gt;&lt;&lt;goto intro&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="TwoSix" tags="" position="787,916" size="100,100">&lt;&lt;nobr&gt;&gt;
-
+&lt;&lt;if $timeSpent &lt; 40&gt;&gt;
 The gate closed as you entered the dungeon. There&#39;s no going back now.&lt;br&gt;&lt;br&gt;
+&lt;&lt;elseif $timeSpent &lt; 70&gt;&gt;
+Hmmm.... It looks like the gate that you entered through has a gap below it.
+&lt;br&gt;&lt;br&gt;
+If you were smaller, you might be able to fit through the gap at the bottom....
+&lt;br&gt;&lt;br&gt;
+&lt;&lt;else&gt;&gt;
+It looks like the gate that you entered through has a gap below it, and, you&#39;ve lost enough height that you should be able to fit beneath the bars, if only by a little bit.&lt;br&gt;&lt;br&gt;
+
+[[Squeeze under the bars|Secret Ending]]
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $playing != 1&gt;&gt;
 &lt;&lt;set $playing to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;br&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;&lt;include &quot;meow_12345&quot;&gt;&gt;&lt;br&gt;
@@ -348,8 +359,7 @@ The gate closed as you entered the dungeon. There&#39;s no going back now.&lt;br
 [[West|OneSix]]＋[[East|ThreeSix]]&lt;br&gt;
    South
 
-
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="PassageFooter" tags="" position="788.3333333333333,1410.3333333333333" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="PassageFooter" tags="" position="788,1410" size="100,100">&lt;&lt;nobr&gt;&gt;
   &lt;div id=&quot;meow_foot&quot;&gt;
     &lt;&lt;if $playing == 1&gt;&gt;
       &lt;&lt;if $timeSpent % 2 == 0&gt;&gt; &lt;&lt;set $health += 1&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -373,7 +383,7 @@ The gate closed as you entered the dungeon. There&#39;s no going back now.&lt;br
       &lt;/div&gt;
       &lt;div class=&quot;meow_fx&quot;&gt;
         Equipment:&lt;br&gt;
-        &lt;&lt;if $timeSpent &lt; 50&gt;&gt;Weapon - Sword&lt;&lt;else&gt;&gt;Weapon - Nothing.&lt;br&gt;&lt;span style=&quot;font-size:smaller&quot;&gt;Foxes like you aren&amp;#39;t able to hold swords.&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;if $armorRating == 2&gt;&gt;Armor&lt;br&gt;&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $timeSpent &lt; 50 and $armorRating == 2&gt;&gt;Weapon - Sword&lt;&lt;else&gt;&gt;Weapon - Nothing.&lt;br&gt;&lt;&lt;if $timeSpent &gt; 50&gt;&gt;&lt;span style=&quot;font-size:smaller&quot;&gt;Foxes like you aren&amp;#39;t able to hold swords.&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;&lt;&lt;if $armorRating == 2&gt;&gt;Armor&lt;br&gt;&lt;&lt;/if&gt;&gt;
         Money:&lt;br&gt;
         &lt;&lt;print $money&gt;&gt;
       &lt;/div&gt;
@@ -467,9 +477,9 @@ As it spreads to your hands (and presumably your feet as well), the orange is re
 Since it&#39;s obvious what you&#39;re turning into by this point, the new wetness of your vulpine nose isn&#39;t as surprising as the ears were. While you wouldn&#39;t usually notice your nose, thanks to the fact that your new muzzle takes up so much of your field of view, it&#39;s much harder to ignore.
 
 &lt;&lt;set $timeSpent to $timeSpent - 2&gt;&gt;
-[[Return|previous()]]</tw-passagedata><tw-passagedata pid="12" name="TF Stage 5" tags="" position="953,1413" size="100,100">&lt;&lt;set $justTFed to 1&gt;&gt;The weapon you were holding just a second ago clatters to the ground as you lose your grip on it. Looking down, it quickly becomes apparent why. Where you once sported prehensile hands with opposable thumbs, only paws remain.
+[[Return|previous()]]</tw-passagedata><tw-passagedata pid="12" name="TF Stage 5" tags="" position="953,1413" size="100,100">&lt;&lt;set $justTFed to 1&gt;&gt;&lt;&lt;if $armorRating == 2&gt;&gt;The weapon you were holding just a second ago clatters to the ground as you lose your grip on it. Looking down, it quickly becomes apparent why. Where you once sported prehensile hands with opposable thumbs, only near-useless paws remain.
 
-This is definitely going to make combat a lot harder.
+This is definitely going to make combat a lot harder.&lt;&lt;else&gt;&gt;If you had found a weapon by this point it likely wouldn&#39;t be of use to you, as your new paws aren&#39;t exactly suited to holding anything.&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $timeSpent to $timeSpent - 2&gt;&gt;
 [[Return|previous()]]</tw-passagedata><tw-passagedata pid="13" name="TF Stage 6" tags="" position="1080,1414" size="100,100">&lt;&lt;set $justTFed to 1&gt;&gt;You let out an inadvertent yip as your eye level suddenly raises by a few inches. It quickly becomes apparent why, as your legs have become digitigrade.
@@ -492,7 +502,7 @@ Taking a few cautious steps in your new position, it becomes clear that you are 
 
 You&#39;re a fox. There is nothing even remotely human left in your appearance, and calling you &quot;foxy&quot; at this point would be a dramatic understatement.
 
-[[Ending 2]]</tw-passagedata><tw-passagedata pid="16" name="OneSix" tags="" position="661,919" size="100,100">&lt;&lt;nobr&gt;&gt;
+[[Ending 13]]</tw-passagedata><tw-passagedata pid="16" name="OneSix" tags="" position="661,919" size="100,100">&lt;&lt;nobr&gt;&gt;
 
 
 As far as architecture goes, this room has basically no defining features. It&#39;s somehow blander than an expired matzah cracker.&lt;br&gt;&lt;br&gt;
@@ -616,7 +626,7 @@ West＋[[East|TwoFour]]&lt;br&gt;
 
 
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Puzz15" tags="" position="521,799" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Puzz15" tags="" position="482,705" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $d1 == $d1set and $d2 == $d2set&gt;&gt;
 That&#39;s it! The two dials click into place, and the wall in front of you opens to reveal a new exit. &lt;&lt;set $timeSpent -= 1&gt;&gt; &lt;&lt;set $Puzz15Puzz to 0&gt;&gt;
 &lt;br&gt;&lt;br&gt;
@@ -628,7 +638,7 @@ You&#39;ve spent some time attempting the puzzle, but it doesn&#39;t seem like y
 
 [[Dang.|OneFive]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="TwoFour" tags="" position="783,683" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $doorKey to 1&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="TwoFour" tags="" position="781,681" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $doorKey to 1&gt;&gt;
 
 This room seems to be a greenhouse. A sign near where you entered from reads &quot;DO NOT FEED THE PLANTS.&quot;
 
@@ -726,7 +736,7 @@ Oh, and I also have this strange key for you, but I&#39;m not quite sure what it
 &lt;br&gt;&lt;br&gt;
 
 &lt;&lt;if $money &gt;= 10 and $armorRating == 0&gt;&gt;
-  &lt;&lt;linkappend &quot;Buy the armor&quot;&gt;&gt;
+  &lt;&lt;linkappend &quot;Buy the armor and sword&quot;&gt;&gt;
     &lt;&lt;set $armorRating to 2&gt;&gt;
     &lt;&lt;replace &quot;#meow_foot&quot;&gt;&gt;&lt;&lt;include PassageFooter&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;/linkappend&gt;&gt;
@@ -740,7 +750,7 @@ Oh, and I also have this strange key for you, but I&#39;m not quite sure what it
    South
 
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Puzz35" tags="" position="526,917" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Puzz35" tags="" position="481,820" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $nameGuess to $nameGuess.toLowerCase()&gt;&gt;
 
 &lt;&lt;if $nameGuess == &quot;ifnkovhgroghprm&quot;&gt;&gt;
@@ -1122,7 +1132,7 @@ West＋[[East|TwoOne]]&lt;br&gt;
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-</tw-passagedata><tw-passagedata pid="46" name="OneTwo" tags="" position="663,451.3333333333333" size="100,100">&lt;&lt;nobr&gt;&gt;
+</tw-passagedata><tw-passagedata pid="46" name="OneTwo" tags="" position="663,451" size="100,100">&lt;&lt;nobr&gt;&gt;
 
 It&#39;s faint, but the walls of this room are emitting purple light. A large, ominous door stands to the South.
 
@@ -1184,7 +1194,7 @@ You fight the $monName!&lt;br&gt;&lt;br&gt;
 They deal &lt;&lt;print $monHealth - $armorRating&gt;&gt; damage to you!
 &lt;br&gt;&lt;br&gt;
 
-&lt;&lt;if $health &gt; 0&gt;&gt;
+&lt;&lt;if $health + $armorRating - $monHealth &gt; 0&gt;&gt;
 You emerge victorious, with &lt;&lt;print $health + $armorRating - $monHealth&gt;&gt; health remaining.&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;set $playing to 0&gt;&gt;
@@ -1326,7 +1336,7 @@ You&#39;re a fursuit.
 
 After some time, XxBunnyDemiGodBunnyxX restores your animacy, giving you time to confirm your choice or choose something else.
 
-[[The end|Good end epilogue]]</tw-passagedata><tw-passagedata pid="64" name="Good end epilogue" tags="" position="418.33333333333337,364.3333333333333" size="100,100">Congrats! You&#39;ve reached one of the main endings!
+[[The end|Good end epilogue]]</tw-passagedata><tw-passagedata pid="64" name="Good end epilogue" tags="" position="418,364" size="100,100">Congrats! You&#39;ve reached one of the main endings!
 
 You can press the back button in the pull-out menu to see more endings. There are a few secret ones to find! (If you need help, check the walkthrough.)
 
@@ -1419,7 +1429,7 @@ After some time, XxBunnyDemiGodBunnyxX restores your animacy, giving you time to
 
 [[The end|Good end epilogue]]</tw-passagedata><tw-passagedata pid="76" name="Ending 100!!!" tags="" position="1132,78" size="200,200">Neat, you found the &lt;i&gt;most&lt;/i&gt; secret ending!
 
-Please, if you&#39;re reading this, tell me! It&#39;d totally make my day to know that someone cared enough about my game that they&#39;d open it up and see its inner workings.</tw-passagedata><tw-passagedata pid="77" name="Notes for anyone downloading this to take some code" tags="" position="1391,134" size="200,100">Notes for anyone downloading this to take some code:
+Please, if you&#39;re reading this, tell me! It&#39;d totally make my day to know that someone cared enough about my game that they&#39;d open it up and see its inner workings.</tw-passagedata><tw-passagedata pid="77" name="Notes for anyone downloading this to take some code" tags="" position="1319,330" size="200,100">Notes for anyone downloading this to take some code:
 
 The code for the maps and sidebar were written by LynxSnowCat! You can find their Itch.io page here: https://snow-cat.itch.io/
 
@@ -1439,7 +1449,7 @@ The falling action is just story, but if you need to know where that is, those a
 
 The ending selection happens in &quot;select1&quot; - 3.
 
-The two puzzles are located in rooms OneFive and ThreeFive, but the passages titled &quot;Puzz15&quot; and &quot;Puzz35&quot; are also important.</tw-passagedata><tw-passagedata pid="78" name="gallery_menu" tags="" position="1409.3333333333333,1139.3333333333333" size="100,100">[[Back to intro|Variables_List]]&lt;&lt;set _achievements to recall(&#39;KettuAchievements&#39;, {})&gt;&gt;
+The two puzzles are located in rooms OneFive and ThreeFive, but the passages titled &quot;Puzz15&quot; and &quot;Puzz35&quot; are also important.</tw-passagedata><tw-passagedata pid="78" name="gallery_menu" tags="" position="1409,1139" size="100,100">[[Back to intro|Variables_List]]&lt;&lt;set _achievements to recall(&#39;KettuAchievements&#39;, {})&gt;&gt;
 
 &lt;center&gt;&lt;h2&gt;[[Ending gallery|ending_gallery]]&lt;/h2&gt;
 View all of the endings that you have obtained, and get hints for finding the rest!
@@ -1468,7 +1478,7 @@ After some time, XxBunnyDemiGodBunnyxX restores your animacy, giving you time to
 
 Well, hopefully you still have time!
 
-[[Continue|ThreeTwo]]</tw-passagedata><tw-passagedata pid="81" name="meow_12345" tags="" position="118.33333333333303,1012.0000000000001" size="200,100">/* Written by u/LynxSnowcat on Reddit, clean map */
+[[Continue|ThreeTwo]]</tw-passagedata><tw-passagedata pid="81" name="meow_12345" tags="" position="118,1012" size="200,100">/* Written by u/LynxSnowcat on Reddit, clean map */
  &lt;&lt;nobr&gt;&gt;
     &lt;div style=&quot;display:block;font-size:larger;text-align:center;float:left;&quot;&gt;
       &lt;&lt;include meow_map&gt;&gt;
@@ -1476,7 +1486,7 @@ Well, hopefully you still have time!
       &amp;#x2b1c;:&amp;nbsp;Explored 
       &amp;#x26aa;:&amp;nbsp;Unexplored &lt;/p&gt;
     &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="StoryCaption" tags="" position="116.6666666666667,1135.3333333333333" size="200,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="StoryCaption" tags="" position="116,1135" size="200,100">&lt;&lt;nobr&gt;&gt;
     &lt;div style=&quot;font-size:larger;border: 1px solid #444&quot;&gt;
       &lt;&lt;include meow_map&gt;&gt;
       &lt;p style=&quot;font-size:small&quot;&gt;＠:&amp;nbsp;You
@@ -1538,7 +1548,7 @@ Well, hopefully you still have time!
 
       &lt;!-- Space to left for contextual options, space to right for potions. --&gt;
     &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="meow_map" tags="" position="115.00000000000004,1257" size="200,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="meow_map" tags="" position="115,1257" size="200,100">&lt;&lt;nobr&gt;&gt;
     &lt;!-- Fills in the symbols on a map, and marks each cell with  --&gt;
     &lt;&lt;set _cn to [&#39;One&#39;,&#39;Two&#39;,&#39;Three&#39;,&#39;Four&#39;,&#39;Five&#39;,&#39;Six&#39;]&gt;&gt;
     &lt;table class=&quot;meow_map&quot;&gt;
@@ -1557,6 +1567,16 @@ Well, hopefully you still have time!
       &lt;&lt;/for&gt;&gt;
       &lt;tr class=&quot;meow_tilt&quot;&gt;&lt;td colspan=2&gt;&lt;/td&gt;&lt;td&gt;&amp;rangd;&lt;/td&gt;&lt;td&gt;&amp;rangd;&lt;/td&gt;&lt;td&gt;&amp;rangd;&lt;/td&gt;&lt;td&gt;&amp;rangd;&lt;/td&gt;&lt;td&gt;&amp;rangd;&lt;/td&gt;&lt;/tr&gt;
     &lt;/table&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="Secret Ending" tags="" position="850,1055" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;b&gt;You&#39;ve found the new super-secret ending, but I haven&#39;t finished writing it! Come back tomorrow, haha.&lt;/b&gt;
+
+You test the gate to the left of the one that you just exited from to see if you can fit under it, but it seems unlikely that you&#39;ll be able to go through it, even if you wait for your transformation to finish.&lt;br&gt;&lt;br&gt;
+
+Another thing catches your attention though. A faintly glowing door&lt;&lt;if $glowingKey == 1&gt;&gt; just like the one you saw on the other end of the dungeon&lt;&lt;/if&gt;&gt; sits in the back corner of the room you origninally woke up in.&lt;br&gt;&lt;br&gt;
+
+Three locks hold it shut
+&lt;&lt;if $unusualKey == 1&gt;&gt;, but the three keys you found within the dungeon fit perfectly, unlcoking each one with a satisfying trio of clicks.&lt;&lt;elseif $glowingKey == 1&gt;&gt;, and the two keys you found remove all but one of them, but the door fails to budge.&lt;&lt;elseif $mysteriousKey == 1&gt;&gt;, and while the key you found unlocks one of the three locks, the other two fail to budge.&lt;&lt;else&gt;&gt;, meaning that you won&#39;t 
+
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
